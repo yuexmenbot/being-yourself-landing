@@ -23,14 +23,14 @@
         /* Header */
         header {
             text-align: center;
-            padding: 30px 20px 20px;
+            padding: 20px 20px 15px;
             background: white;
         }
         
         .logo {
-            max-width: 400px;
+            max-width: 200px;
             height: auto;
-            margin: 0 auto 20px;
+            margin: 0 auto;
         }
         
         /* Hero */
@@ -148,6 +148,31 @@
             line-height: 1.6;
         }
         
+        /* Testimonials */
+        .testimonial {
+            background: #F2ECE4;
+            padding: 25px;
+            border-left: 5px solid #9FB59C;
+            border-radius: 12px;
+            margin: 20px 0;
+            font-style: italic;
+            line-height: 1.7;
+        }
+        
+        .testimonial .author {
+            margin-top: 12px;
+            font-weight: 600;
+            font-style: normal;
+            color: #6B7565;
+            font-size: 0.95em;
+        }
+        
+        .testimonial .role {
+            font-weight: 400;
+            font-size: 0.9em;
+            color: #6B7565;
+        }
+        
         /* Final CTA */
         .final-cta {
             background: linear-gradient(135deg, #5A4A42 0%, #6B7565 100%);
@@ -173,7 +198,8 @@
         
         @media (max-width: 768px) {
             .hero h1 { font-size: 1.8em; }
-            .logo { max-width: 280px; }
+            .logo { max-width: 150px; }
+            header { padding: 15px 20px 10px; }
         }
     </style>
 </head>
@@ -197,16 +223,15 @@
         <h2>If This Is You...</h2>
         
         <ul class="problem-list">
-            <li>Your success came from <strong>pushing, controlling, and dominating</strong>—but now it feels exhausting</li>
-            <li>You can't turn off your mind at night, even after a successful day</li>
-            <li>You're <strong>disconnected from your body</strong>—chronic tension, pain, or numbness you've been ignoring</li>
-            <li>You feel like you're performing in your own life, even with your partner and kids</li>
+            <li>Your success came from pushing and controlling—but now it feels exhausting</li>
+            <li>You're disconnected from your body—chronic tension, pain, or numbness you've been ignoring</li>
+            <li>You feel like you're performing in your own life, even with people who matter most</li>
             <li>Big decisions feel clouded by anxiety instead of clear and grounded</li>
-            <li>You're tired of the struggle—there has to be a better way to succeed</li>
+            <li>You're tired of the struggle—there has to be a better way</li>
         </ul>
         
         <div class="callout">
-            What got you here was survival mode: control, overthinking, and disconnection from yourself. What will get you forward is reconnecting with your body, emotions, and natural state of clarity.
+            What got you here was survival mode: control, overthinking, disconnection. What will get you forward is reconnecting with your body, emotions, and natural clarity.
         </div>
     </section>
     
@@ -227,38 +252,36 @@
     <section>
         <h2>How This Works</h2>
         
-        <p style="font-size: 1.1em; margin-bottom: 20px;">This is <strong>body-based presence work</strong>—not traditional talk therapy or cognitive strategies.</p>
+        <p style="font-size: 1.1em; margin-bottom: 20px;">This is <strong>body-based presence work</strong> through somatic inquiry.</p>
         
-        <p>Through <strong>somatic inquiry</strong>, we work directly with your body to:</p>
+        <p>We work directly with your body to:</p>
         
         <ul style="margin: 20px 0; padding-left: 25px;">
-            <li style="margin: 8px 0;">Process what's stored in your body (including past trauma) through <strong>felt experience</strong>, not just talking about it</li>
             <li style="margin: 8px 0;">Reconnect you with your emotions, sensations, and natural state of mind</li>
+            <li style="margin: 8px 0;">Process what's stored in your body through <strong>felt experience</strong>, not just talking about it</li>
             <li style="margin: 8px 0;">Shift survival-driven patterns (control, struggle, disconnection) into grounded presence</li>
         </ul>
         
-        <p style="margin-top: 20px; font-weight: 600;">The work is tailored to your process—it could be coaching, it could be somatic therapy. What it's <em>not</em>: clinical diagnosis or traditional cognitive therapy.</p>
+        <p style="margin-top: 20px;">The work is tailored to your unique process and what you need.</p>
     </section>
     
     <section>
-        <h2>Common Questions</h2>
+        <h2>What People Say</h2>
         
-        <p style="margin-bottom: 15px;"><strong>Is this therapy?</strong><br>
-        It's tailored to you. It could be coaching or somatic therapy, depending on what you need. I don't do clinical diagnosis, but I do work with trauma through body-based methods.</p>
+        <div class="testimonial">
+            "I didn't really know what somatic inquiry was at first. But about 10 or 11 days after our session, I started feeling my intuition back and connecting to my body. Since a traumatic injury at the end of 2023, I couldn't feel it properly—so this shift has been incredible."
+            <div class="author">— Imran Tariq <span class="role">WSJ bestselling author</span></div>
+        </div>
         
-        <p style="margin-bottom: 15px;"><strong>What about past trauma?</strong><br>
-        I absolutely work with past trauma—but through <strong>somatic experiencing</strong>, not just talking. We process it through your body, where it's actually stored.</p>
-        
-        <p style="margin-bottom: 15px;"><strong>How is this different from regular therapy?</strong><br>
-        This is body-based, not mind-based. The opposite of cognitive behavioral therapy. We work with what you <em>feel</em>, not what you <em>think</em>.</p>
-        
-        <p style="margin-bottom: 15px;"><strong>How long does this take?</strong><br>
-        We start with a free 1.5-hour discovery call. From there, most clients work with me for 3-6 months.</p>
+        <div class="testimonial">
+            "Working with Yue was a turning point. I learned that clarity doesn't come from thinking harder, but from settling the nervous system—helping me stay present under pressure and perform better as a founder."
+            <div class="author">— Sebastian Mueller <span class="role">Founder, MING Labs</span></div>
+        </div>
     </section>
     
 </div>
 
-<div class="final-cta">
+<div class="final-cta" id="apply">
     <div class="container">
         <h2>Ready to Reconnect?</h2>
         
