@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stop Managing Behavior. Start Signaling Safety. | Being Yourself</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+            line-height: 1.7;
+            color: #5A4A42;
+            background: #F2ECE4;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #5A4A42 0%, #6B7565 100%);
+            color: #F2ECE4;
+            padding: 60px 20px;
+            text-align: center;
+            border-radius: 0 0 30px 30px;
+            margin-bottom: 40px;
+        }
+        
+        .hero h1 {
+            font-size: 2.5em;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        .hero .subheadline {
+            font-size: 1.3em;
+            margin-bottom: 30px;
+            color: #D4C4B0;
+            font-weight: 400;
+        }
+        
+        .hero .offering {
+            background: rgba(242, 236, 228, 0.1);
+            padding: 25px;
+            border-radius: 15px;
+            margin: 30px 0;
+            border-left: 4px solid #E89B7E;
+        }
+        
+        .hero .offering p {
+            margin: 10px 0;
+            font-size: 1.1em;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: #E89B7E;
+            color: #5A4A42;
+            padding: 18px 45px;
+            font-size: 1.2em;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(232, 155, 126, 0.3);
+        }
+        
+        .cta-button:hover {
+            background: #C9A89E;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(232, 155, 126, 0.4);
+        }
+        
+        .micro-cred {
+            margin-top: 20px;
+            font-size: 0.95em;
+            color: #D4C4B0;
+            font-style: italic;
+        }
+        
+        /* Content Sections */
+        section {
+            background: white;
+            padding: 50px 30px;
+            margin-bottom: 30px;
+            border-radius: 20px;
+            box-shadow: 0 2px 10px rgba(90, 74, 66, 0.05);
+        }
+        
+        h2 {
+            font-size: 2em;
+            margin-bottom: 25px;
+            color: #5A4A42;
+            border-left: 5px solid #E89B7E;
+            padding-left: 20px;
+        }
+        
+        h3 {
+            font-size: 1.4em;
+            margin: 30px 0 15px 0;
+            color: #6B7565;
+        }
+        
+        .problem-list, .benefit-list {
+            list-style: none;
+            margin: 20px 0;
+        }
+        
+        .problem-list li, .benefit-list li {
+            padding: 15px 15px 15px 45px;
+            margin: 10px 0;
+            background: #F2ECE4;
+            border-radius: 10px;
+            position: relative;
+        }
+        
+        .problem-list li:before {
+            content: "✗";
+            position: absolute;
+            left: 15px;
+            color: #E89B7E;
+            font-weight: bold;
+            font-size: 1.3em;
+        }
+        
+        .benefit-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 15px;
+            color: #9FB59C;
+            font-weight: bold;
+            font-size: 1.3em;
+        }
+        
+        .paths {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .path-card {
+            background: #F2ECE4;
+            padding: 25px;
+            border-radius: 15px;
+            border-top: 4px solid #E89B7E;
+        }
+        
+        .path-card h4 {
+            color: #5A4A42;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+        
+        @media (max-width: 768px) {
+            .paths {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero h1 {
+                font-size: 1.8em;
+            }
+        }
+        
+        /* Objections Table */
+        .objections {
+            margin: 30px 0;
+        }
+        
+        .objection-row {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 20px;
+            padding: 20px;
+            margin: 15px 0;
+            background: #F2ECE4;
+            border-radius: 10px;
+        }
+        
+        .objection-row strong {
+            color: #E89B7E;
+        }
+        
+        /* Final CTA */
+        .final-cta {
+            background: linear-gradient(135deg, #5A4A42 0%, #6B7565 100%);
+            color: #F2ECE4;
+            padding: 60px 30px;
+            text-align: center;
+            border-radius: 20px;
+        }
+        
+        .final-cta h2 {
+            color: #F2ECE4;
+            border: none;
+            padding: 0;
+        }
+        
+        .final-cta ul {
+            list-style: none;
+            margin: 30px 0;
+            text-align: left;
+            display: inline-block;
+        }
+        
+        .final-cta ul li {
+            padding: 10px 0;
+            font-size: 1.1em;
+        }
+        
+        .final-cta ul li:before {
+            content: "→";
+            color: #E89B7E;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        
+        .trust-line {
+            margin-top: 20px;
+            font-size: 0.9em;
+            color: #D4C4B0;
+        }
+    </style>
+</head>
+<body>
+
+<div class="hero">
+    <div class="container">
+        <h1>Stop Managing Behavior. Start Signaling Safety.<br>The Strategic Path to Effortless Performance.</h1>
+        <p class="subheadline">Your "performance problems" are actually nervous system patterns. Clear the trauma-based "noise" to access unshakeable clarity and better decisions under pressure.</p>
+        
+        <div class="offering">
+            <p><strong>For Individuals:</strong> 1.5-Hour Somatic Inquiry Journey to clear the past and regain your "neutral mind."</p>
+            <p><strong>For Teams:</strong> 2-Hour "State of Mind" Workshop to end blame cycles and unlock collective creativity.</p>
+            <p style="margin-top: 20px; color: #E89B7E;"><strong>The Outcome:</strong> Effortless productivity where performance is a byproduct of well-being, not a substitute for it.</p>
+        </div>
+        
+        <a href="#apply" class="cta-button">Book Your Free Discovery Call</a>
+        <p class="micro-cred">Trauma-sensitive somatic inquiry for founders, leaders, and high-impact teams.</p>
+    </div>
+</div>
+
+<div class="container">
+    
+    <section id="problem">
+        <h2>What's Really Happening</h2>
+        <p style="font-size: 1.15em; margin-bottom: 25px;">You've been trying to solve "stress" with more thinking, more planning, and more control. But <strong>you can't think your way out of a nervous system response</strong>.</p>
+        
+        <p>What looks like "lack of ownership," "overreacting," or "burnout" is actually your body doing what it learned to do: protect you. You are running on an invisible operating system shaped by old "ammunition"—past triggers that turn a simple Slack message or a KPI dashboard into a perceived threat.</p>
+        
+        <h3>If any of these are true, your "Survival Adaptations" are now your biggest costs:</h3>
+        
+        <ul class="problem-list">
+            <li><strong>Perfectionism</strong> is rewarded as "high standards," but it's actually a terror of being seen as incompetent.</li>
+            <li><strong>Overwork</strong> is praised as "drive," but it's a frantic attempt to seek safety through action.</li>
+            <li><strong>People-Pleasing</strong> is seen as "easy to work with," but it's a fear of disconnection and shame.</li>
+            <li><strong>Emotional Shutdown</strong> is called "professionalism," but it's a nervous system in freeze, blocking your creativity.</li>
+            <li>You feel <strong>"foggy and triggered"</strong> in meetings, losing access to your best problem-solving brain.</li>
+            <li>You've mastered the external game, but you're <strong>"spilling the milk" internally</strong> every single day.</li>
+        </ul>
+    </section>
+    
+    <section id="cost">
+        <h2>The Real Cost</h2>
+        <p style="font-size: 1.15em; color: #E89B7E;"><strong>When your nervous system is in defense, you lose access to your higher brain structures.</strong></p>
+        
+        <p>You are literally paying a tax on your intelligence. The cost is paid in impulsive emails, avoidant leadership, and a "viral nature of negativity" that drains your team's bandwidth.</p>
+        
+        <p><strong>You are sacrificing your potential and your peace for a version of success that is actually a survival state.</strong> If you don't solve the "Safety Problem," you will never solve the "Performance Problem."</p>
+    </section>
+    
+    <section id="promise">
+        <h2>The Shift: From Survival-Driven Effort to Regulated Presence</h2>
+        
+        <ul class="benefit-list">
+            <li><strong>Access Your Higher Brain:</strong> When the body feels safe, clarity, creativity, and ethical influence become your default.</li>
+            <li><strong>Interrupt the Loops:</strong> Learn to sense activation—tight chest, urge to rush, numbness—and regain choice in real-time.</li>
+            <li><strong>End the Blame Cycles:</strong> Treat activation as information, leading to more ownership, honesty, and repair in your team.</li>
+            <li><strong>Effortless Productivity:</strong> Stop "thinking harder" and start leading from a state of "neutral" power where skills work naturally.</li>
+            <li><strong>The "Travel Feeling" Anywhere:</strong> Unburden your mind from chronic thinking to find peace in the middle of the storm.</li>
+            <li><strong>Trauma-Sensitive Mastery:</strong> Dismantle the adaptations that once protected you but now imprison your growth.</li>
+        </ul>
+    </section>
+    
+    <section id="mechanism">
+        <h2>Why This Is Different</h2>
+        <p style="font-size: 1.15em;">We don't give you more "behavior management" tools. <strong>We address the Source: The Autonomic State.</strong></p>
+        
+        <p>Using <strong>Compassionate Inquiry and Somatic Re-patterning</strong>, we help you identify the "ammunition" you've been carrying. We teach you and your team how to signal safety through tone, pacing, and responsiveness.</p>
+        
+        <p style="margin-top: 20px; padding: 20px; background: #F2ECE4; border-left: 4px solid #E89B7E; border-radius: 10px;">This isn't "soft"—it's strategic. We create the conditions where people can think, feel, and relate without being hijacked by survival states.</p>
+    </section>
+    
+    <section id="paths">
+        <h2>Two Paths to Clarity</h2>
+        
+        <div class="paths">
+            <div class="path-card">
+                <h4>Path A: Individual Journey</h4>
+                <p>A 1.5-hour deep-dive discovery call to map your core patterns.</p>
+                <ul style="margin: 15px 0; padding-left: 20px;">
+                    <li>Somatic Experience: Contact the felt sense of what is happening inside you right now.</li>
+                    <li>Pattern Mapping: Identify the "survival adaptations" currently costing you the most.</li>
+                    <li>Customized Roadmap: A tailored 3-month plan to clear the trauma and regain your "neutral mind."</li>
+                </ul>
+            </div>
+            
+            <div class="path-card">
+                <h4>Path B: Team Workshop</h4>
+                <p>A 2-hour interactive session + worksheet for high-impact teams.</p>
+                <ul style="margin: 15px 0; padding-left: 20px;">
+                    <li>Safety as Strategy: Learn how nervous system states drive (or kill) collaboration and profit.</li>
+                    <li>Trigger Awareness: Identify the "workplace ingredients" that light up old pain and how to interrupt them.</li>
+                    <li>Collective Regulation: Practical tools for teams to signal safety and stay in "social engagement" under pressure.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    
+    <section id="for-who">
+        <h2>Is This For You?</h2>
+        
+        <h3 style="color: #9FB59C;">✓ This is for you if:</h3>
+        <ul class="benefit-list">
+            <li>You are a leader who realizes that "managing behavior" isn't working anymore.</li>
+            <li>You want a team that responds rather than reacts to uncertainty and pressure.</li>
+            <li>You are ready to look at the "ammunition" behind your triggers with honesty and compassion.</li>
+            <li>You value performance as a byproduct of well-being, not a substitute for it.</li>
+            <li>You are committed to a process of "coming back to the body" as a leadership skill.</li>
+        </ul>
+        
+        <h3 style="color: #E89B7E; margin-top: 40px;">✗ This is NOT for you if:</h3>
+        <ul class="problem-list">
+            <li>You want a "quick fix" that doesn't require looking at internal patterns.</li>
+            <li>You believe that stress and "grinding" are the only ways to achieve results.</li>
+            <li>You are looking for traditional HR compliance training or clinical psychotherapy.</li>
+            <li>You are not willing to prioritize psychological and somatic safety in your culture.</li>
+            <li>You prefer to stay in the "thinking harder" loop rather than the "feeling more" inquiry.</li>
+        </ul>
+    </section>
+    
+    <section id="objections">
+        <h2>Common Questions</h2>
+        
+        <div class="objections">
+            <div class="objection-row">
+                <strong>"Is this therapy?"</strong>
+                <div>No. This is a strategic inquiry into how nervous system states drive workplace performance. We focus on regulation and clarity, not clinical diagnosis.</div>
+            </div>
+            
+            <div class="objection-row">
+                <strong>"Is this 'soft' or 'woo'?"</strong>
+                <div>No. It is based on polyvagal theory and neurobiology. Safety is the gateway to the higher brain structures required for complex problem-solving. It's a competitive advantage.</div>
+            </div>
+            
+            <div class="objection-row">
+                <strong>"Will this take a lot of time?"</strong>
+                <div>The workshop is 2 hours; the individual journey is 3 months. The shift in state actually saves time by reducing mistakes, blame cycles, and avoidant behavior.</div>
+            </div>
+            
+            <div class="objection-row">
+                <strong>"I'm functional, just stressed—do I need this?"</strong>
+                <div>Functionality in a survival state is a high-cost operation. This work moves you from functional to effortless—where you lead from comfort, not anxiety.</div>
+            </div>
+            
+            <div class="objection-row">
+                <strong>"I've tried coaching before."</strong>
+                <div>Most coaching focuses on behavior. We focus on the state that drives the behavior. If the nervous system feels under threat, no amount of coaching will stick.</div>
+            </div>
+            
+            <div class="objection-row">
+                <strong>"What if my problem is just a 'difficult' team member?"</strong>
+                <div>"Difficult" is often a nervous system seeking safety through action or disconnection. We teach you how to shift the environment so they can access their best selves.</div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="credibility" style="background: #F2ECE4;">
+        <h2>Built on a Decade of Experience</h2>
+        <p>This work is built on a decade of experience with high-performing leaders and teams who require results without the hype. Our method is a precise blend of <strong>Compassionate Inquiry, Somatic Re-patterning, and State of Mind Awareness</strong> that delivers a new internal operating system.</p>
+        
+        <p style="margin-top: 20px; font-style: italic; color: #6B7565;">[Client logos and testimonials would go here]</p>
+        
+        <p style="margin-top: 20px;"><strong>We provide a strong, confidential container for deep work</strong>, ensuring that the insights gained translate directly into tangible, real-world results in your business and personal life.</p>
+    </section>
+    
+</div>
+
+<div class="final-cta" id="apply">
+    <div class="container">
+        <h2>You have built your success on accountability.<br>Now, apply that same rigor to the "Safety Problem."</h2>
+        
+        <p style="font-size: 1.2em; margin: 30px 0;">Stop letting old adaptations decide your future. Step into the effortless power of a regulated, clear mind.</p>
+        
+        <ul>
+            <li>A precise map of your (or your team's) survival patterns.</li>
+            <li>Clarity on the "ammunition" that is currently being triggered.</li>
+            <li>A customized roadmap for individual or team transformation.</li>
+        </ul>
+        
+        <div style="margin: 40px 0;">
+            <a href="https://calendly.com/yourlink" class="cta-button">Apply for Your Discovery Call</a>
+        </div>
+        
+        <p class="trust-line">Free. No pressure. We'll know quickly if it's a fit.</p>
+    </div>
+</div>
+
+</body>
+</html>

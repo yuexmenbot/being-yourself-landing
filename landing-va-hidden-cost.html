@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Hidden Cost of Success: Your Body Is Sending The Bill | Being Yourself</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+            line-height: 1.7;
+            color: #5A4A42;
+            background: #F2ECE4;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, #5A4A42 0%, #6B7565 100%);
+            color: #F2ECE4;
+            padding: 60px 20px;
+            text-align: center;
+            border-radius: 0 0 30px 30px;
+            margin-bottom: 40px;
+        }
+        
+        .hero h1 {
+            font-size: 2.8em;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        .hero .subheadline {
+            font-size: 1.3em;
+            margin-bottom: 30px;
+            color: #D4C4B0;
+            font-weight: 400;
+        }
+        
+        .hero .benefits {
+            background: rgba(242, 236, 228, 0.1);
+            padding: 25px;
+            border-radius: 15px;
+            margin: 30px 0;
+            text-align: left;
+            border-left: 4px solid #E89B7E;
+        }
+        
+        .hero .benefits ul {
+            list-style: none;
+        }
+        
+        .hero .benefits li {
+            padding: 8px 0;
+            font-size: 1.1em;
+        }
+        
+        .hero .benefits li:before {
+            content: "→";
+            color: #E89B7E;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: #E89B7E;
+            color: #5A4A42;
+            padding: 18px 45px;
+            font-size: 1.2em;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(232, 155, 126, 0.3);
+        }
+        
+        .cta-button:hover {
+            background: #C9A89E;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(232, 155, 126, 0.4);
+        }
+        
+        .micro-cred {
+            margin-top: 20px;
+            font-size: 0.95em;
+            color: #D4C4B0;
+            font-style: italic;
+        }
+        
+        section {
+            background: white;
+            padding: 50px 30px;
+            margin-bottom: 30px;
+            border-radius: 20px;
+            box-shadow: 0 2px 10px rgba(90, 74, 66, 0.05);
+        }
+        
+        h2 {
+            font-size: 2em;
+            margin-bottom: 25px;
+            color: #5A4A42;
+            border-left: 5px solid #E89B7E;
+            padding-left: 20px;
+        }
+        
+        h3 {
+            font-size: 1.4em;
+            margin: 30px 0 15px 0;
+            color: #6B7565;
+        }
+        
+        .problem-list, .benefit-list {
+            list-style: none;
+            margin: 20px 0;
+        }
+        
+        .problem-list li, .benefit-list li {
+            padding: 15px 15px 15px 45px;
+            margin: 10px 0;
+            background: #F2ECE4;
+            border-radius: 10px;
+            position: relative;
+        }
+        
+        .problem-list li:before {
+            content: "✗";
+            position: absolute;
+            left: 15px;
+            color: #E89B7E;
+            font-weight: bold;
+            font-size: 1.3em;
+        }
+        
+        .benefit-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 15px;
+            color: #9FB59C;
+            font-weight: bold;
+            font-size: 1.3em;
+        }
+        
+        .callout {
+            background: #F2ECE4;
+            padding: 25px;
+            border-left: 4px solid #E89B7E;
+            border-radius: 10px;
+            margin: 25px 0;
+            font-size: 1.1em;
+            font-weight: 500;
+        }
+        
+        .objection-row {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 20px;
+            padding: 20px;
+            margin: 15px 0;
+            background: #F2ECE4;
+            border-radius: 10px;
+        }
+        
+        .objection-row strong {
+            color: #E89B7E;
+        }
+        
+        .final-cta {
+            background: linear-gradient(135deg, #5A4A42 0%, #6B7565 100%);
+            color: #F2ECE4;
+            padding: 60px 30px;
+            text-align: center;
+            border-radius: 20px;
+        }
+        
+        .final-cta h2 {
+            color: #F2ECE4;
+            border: none;
+            padding: 0;
+        }
+        
+        .final-cta ul {
+            list-style: none;
+            margin: 30px 0;
+            text-align: left;
+            display: inline-block;
+        }
+        
+        .final-cta ul li {
+            padding: 10px 0;
+            font-size: 1.1em;
+        }
+        
+        .final-cta ul li:before {
+            content: "→";
+            color: #E89B7E;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        
+        .trust-line {
+            margin-top: 20px;
+            font-size: 0.9em;
+            color: #D4C4B0;
+        }
+        
+        .price {
+            font-size: 1.3em;
+            color: #E89B7E;
+            font-weight: 700;
+            margin: 15px 0;
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 1.8em; }
+            .objection-row { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="hero">
+    <div class="container">
+        <h1>The Hidden Cost of Success:<br>Your Body Is Sending The Bill</h1>
+        <p class="subheadline">You've mastered the external game. Now, master the internal operating system that's quietly failing you.</p>
+        
+        <div class="benefits">
+            <ul>
+                <li>Re-wire your nervous system for unshakeable clarity under pressure</li>
+                <li>Transform chronic anxiety and somatic pain into grounded, effortless power</li>
+                <li>Lead your business and life from a place of comfort, not constant reaction</li>
+            </ul>
+        </div>
+        
+        <a href="#apply" class="cta-button">Book Free Discovery Call</a>
+        <p class="micro-cred">Proven somatic inquiry for high-performing leaders and founders.</p>
+    </div>
+</div>
+
+<div class="container">
+    
+    <section id="problem">
+        <h2>What's Really Happening</h2>
+        <p style="font-size: 1.15em; margin-bottom: 25px;"><strong>You are functionally successful.</strong> You have the status, the business, and the lifestyle that everyone else wants. But internally, you are not okay.</p>
+        
+        <p>You feel a profound sense of isolation, as if you are performing in your own life. Your relationships feel shallow—driven by what you can provide or the status you hold, rather than who you really are. You quietly wonder if anyone truly sees you, or if they just like the security you provide.</p>
+        
+        <h3>If any of these are true, your internal system is in chronic red alert:</h3>
+        
+        <ul class="problem-list">
+            <li>You can't "switch off" at night, no matter how successful the day was.</li>
+            <li>You experience chronic tension, migraines, or gut issues that doctors can't fully explain.</li>
+            <li>You find yourself over-reacting to small triggers at home or in the boardroom.</li>
+            <li>You feel a constant, low-grade anxiety that no amount of achievement can silence.</li>
+            <li>You are tired of optimizing and fixing, yet the internal pressure never stops.</li>
+            <li>You feel alone at the top, surrounded by people but disconnected from genuine intimacy.</li>
+        </ul>
+    </section>
+    
+    <section id="cost">
+        <h2>The Cost You're Paying</h2>
+        <p style="font-size: 1.15em;">The drive that built your success has become a predicament.</p>
+        
+        <p>What was once your greatest asset—your ability to push, strive, and achieve—is now the very thing blocking you from a fruitful, fulfilled path. This isn't about "fixing" your high-achiever nature; it's about recognizing that your current driver is running on an outdated script.</p>
+        
+        <div class="callout">
+            The cost is a life that looks perfect on the outside but feels hollow and exhausting on the inside. You are sacrificing your health and your deepest human connections for a version of success that no longer nourishes you.
+        </div>
+    </section>
+    
+    <section id="promise">
+        <h2>The Shift: From Striving to Sustainable Impact</h2>
+        
+        <ul class="benefit-list">
+            <li><strong>Decision Clarity:</strong> Access deep, grounded wisdom instead of reactive, anxious thinking.</li>
+            <li><strong>Emotional Steadiness:</strong> Maintain calm and presence when the market or team is in chaos.</li>
+            <li><strong>Authentic Relationships:</strong> Move beyond shallow interactions to deep, seen, and felt connections.</li>
+            <li><strong>Somatic Relief:</strong> A significant reduction in chronic tension, pain, and stress responses.</li>
+            <li><strong>True Authority:</strong> Lead from an internal sense of security, not external validation or status.</li>
+            <li><strong>Effortless Being:</strong> Experience the comfort of being yourself, without the need to perform.</li>
+        </ul>
+    </section>
+    
+    <section id="mechanism">
+        <h2>Why This Is Different</h2>
+        <p style="font-size: 1.15em;">This is not therapy, coaching, or another self-help hack.</p>
+        
+        <p>We use <strong>Presence-Based Somatic Inquiry</strong> to systematically dismantle the unconscious stress-response patterns that keep you cycling between high performance and internal depletion.</p>
+        
+        <p>We don't try to fix you; we teach you how to listen to the truth your body is already holding. The result is a <strong>permanent re-patterning of your nervous system</strong>, leading to a new default state of grounded competence.</p>
+    </section>
+    
+    <section id="discovery-call">
+        <h2>What Happens in the 1.5-Hour Discovery Call</h2>
+        <p>This is a deep-dive experience designed to give you a direct taste of the work and clear insight into your internal landscape.</p>
+        
+        <div style="margin: 30px 0;">
+            <div style="background: #F2ECE4; padding: 20px; border-radius: 10px; margin: 15px 0;">
+                <h4 style="color: #5A4A42; margin-bottom: 10px;">Somatic Inquiry Experience</h4>
+                <p>A guided session to contact the felt sense of what is happening inside you right now.</p>
+            </div>
+            
+            <div style="background: #F2ECE4; padding: 20px; border-radius: 10px; margin: 15px 0;">
+                <h4 style="color: #5A4A42; margin-bottom: 10px;">Desire & Need Exploration</h4>
+                <p>We look past the tactical goals to uncover your deep, underlying desires and needs.</p>
+            </div>
+            
+            <div style="background: #F2ECE4; padding: 20px; border-radius: 10px; margin: 15px 0;">
+                <h4 style="color: #5A4A42; margin-bottom: 10px;">Customized Journey Design</h4>
+                <p>We map out a tailored 3-month path specifically designed for your nervous system and vision.</p>
+            </div>
+        </div>
+        
+        <div class="callout">
+            You walk away with immediate clarity on your core pattern, even if we decide not to continue together. This is a high-value assessment, not a sales pitch.
+        </div>
+    </section>
+    
+    <section id="investment">
+        <h2>The Investment</h2>
+        <p>3-Month Somatic Inquiry Journey</p>
+        <p class="price">$5,880 USD</p>
+        <p style="color: #6B7565; margin-top: 10px;">Payment plans available for qualified clients.</p>
+    </section>
+    
+    <section id="for-who">
+        <h2>Is This For You?</h2>
+        
+        <h3 style="color: #9FB59C;">✓ This is for you if:</h3>
+        <ul class="benefit-list">
+            <li>You are a leader, CEO, or entrepreneur who understands that internal state drives external results.</li>
+            <li>You are ready to move beyond "fixing" yourself and are willing to engage in deep, honest inquiry.</li>
+            <li>You are tired of managing stress and want to eliminate the source of the pressure.</li>
+            <li>You value accountability and are committed to a 3-month process of embodied change.</li>
+            <li>You recognize that your chronic physical symptoms are a message, not an enemy.</li>
+        </ul>
+        
+        <h3 style="color: #E89B7E; margin-top: 40px;">✗ This is NOT for you if:</h3>
+        <ul class="problem-list">
+            <li>You are looking for a quick-fix hack or a purely intellectual strategy.</li>
+            <li>You are not willing to look at the emotional or somatic roots of your behavior.</li>
+            <li>You are seeking traditional psychotherapy or medical treatment for clinical conditions.</li>
+            <li>You are comfortable with shallow relationships and high-stress living.</li>
+            <li>You are not ready to invest the time or resources required for deep integration.</li>
+        </ul>
+    </section>
+    
+    <section id="objections">
+        <h2>Common Questions</h2>
+        
+        <div>
+            <div class="objection-row">
+                <strong>"Is this therapy?"</strong>
+                <div>No. This is a structured, presence-based inquiry focused on re-patterning your nervous system for sustainable leadership. We focus on the present moment, not clinical diagnosis.</div>
+            </div>
+            
+            <div class="objection-row">
+                <strong>"Is this spiritual/woo?"</strong>
+                <div>No. This is grounded in evidence-based somatic methods (like Compassionate Inquiry and IFS) that address the body's physiological response to stress. It is practical and results-oriented.</div>
+            </div>
+            
+            <div class="objection-row">
+                <strong>"Will this take a lot of time?"</strong>
+                <div>The program is 3 months. The daily practice is designed to integrate into your life, not consume it. We focus on quality of presence, not quantity of time.</div>
+            </div>
+            
+            <div class="objection-row">
+                <strong>"I'm functional, just stressed—do I need this?"</strong>
+                <div>Functionality under stress is a high-cost operation. This work is for those who want to move from functional to effortless—to lead from a state of comfort, not anxiety.</div>
+            </div>
+            
+            <div class="objection-row">
+                <strong>"I've tried coaching/therapy before."</strong>
+                <div>This is different because it is somatic. We bypass the over-thinking mind and work directly with the body's intelligence, which is where the patterns are stored.</div>
+            </div>
+            
+            <div class="objection-row">
+                <strong>"What if my problem is physical pain?"</strong>
+                <div>Your pain is a message. We treat somatic symptoms as a direct communication from your nervous system, using inquiry to address the emotional roots of the chronic tension.</div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="credibility" style="background: #F2ECE4;">
+        <h2>Built on a Decade of Experience</h2>
+        <p>This work is built on a decade of experience with high-performing leaders, founders, and change-makers who require results without the hype. Our method is a precise blend of <strong>somatic inquiry, nervous system re-patterning, and clear decision practice</strong> that delivers a new internal operating system.</p>
+        
+        <p style="margin-top: 20px; font-style: italic; color: #6B7565;">[Client logos and testimonials would go here]</p>
+        
+        <p style="margin-top: 20px;"><strong>We provide a strong, confidential container for deep work</strong>, ensuring that the insights gained translate directly into tangible, real-world results in your business and personal life.</p>
+    </section>
+    
+</div>
+
+<div class="final-cta" id="apply">
+    <div class="container">
+        <h2>You have built your success on accountability and clear action.<br>Now, apply that same rigor to your internal state.</h2>
+        
+        <p style="font-size: 1.2em; margin: 30px 0;">The cost of not addressing this is the continued erosion of your peace and the ceiling on your authentic power. Stop running on the fumes of anxiety and step into the effortless power of grounded leadership.</p>
+        
+        <ul>
+            <li>A direct experience of somatic inquiry</li>
+            <li>Clarity on your deep desires and core patterns</li>
+            <li>A customized map for your 3-month journey</li>
+        </ul>
+        
+        <div style="margin: 40px 0;">
+            <a href="https://calendly.com/yourlink" class="cta-button">Apply for Your Discovery Call</a>
+        </div>
+        
+        <p class="trust-line">Free. No pressure. We'll know quickly if it's a fit.</p>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Body Is Keeping Score: The Hidden Tax on High Performance | Being Yourself</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+            line-height: 1.7;
+            color: #5A4A42;
+            background: #F2ECE4;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* Alert Bar */
+        .alert-bar {
+            background: #E89B7E;
+            color: #5A4A42;
+            text-align: center;
+            padding: 12px;
+            font-weight: 600;
+            font-size: 0.95em;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #5A4A42 0%, #6B7565 100%);
+            color: #F2ECE4;
+            padding: 70px 20px 60px 20px;
+            text-align: center;
+        }
+        
+        .hero .eyebrow {
+            text-transform: uppercase;
+            font-size: 0.85em;
+            letter-spacing: 2px;
+            color: #E89B7E;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        .hero h1 {
+            font-size: 3em;
+            line-height: 1.15;
+            margin-bottom: 25px;
+            font-weight: 700;
+        }
+        
+        .hero .subheadline {
+            font-size: 1.4em;
+            margin-bottom: 35px;
+            color: #D4C4B0;
+            font-weight: 400;
+            line-height: 1.5;
+        }
+        
+        .hero .value-props {
+            background: rgba(242, 236, 228, 0.12);
+            padding: 30px;
+            border-radius: 15px;
+            margin: 35px auto;
+            max-width: 700px;
+            text-align: left;
+            border-left: 5px solid #E89B7E;
+        }
+        
+        .hero .value-props ul {
+            list-style: none;
+        }
+        
+        .hero .value-props li {
+            padding: 10px 0;
+            font-size: 1.15em;
+            line-height: 1.5;
+        }
+        
+        .hero .value-props li:before {
+            content: "✓";
+            color: #E89B7E;
+            font-weight: bold;
+            margin-right: 12px;
+            font-size: 1.2em;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: #E89B7E;
+            color: #5A4A42;
+            padding: 20px 50px;
+            font-size: 1.3em;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.3s;
+            box-shadow: 0 5px 20px rgba(232, 155, 126, 0.4);
+        }
+        
+        .cta-button:hover {
+            background: #C9A89E;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(232, 155, 126, 0.5);
+        }
+        
+        .micro-cred {
+            margin-top: 25px;
+            font-size: 0.95em;
+            color: #D4C4B0;
+            font-style: italic;
+        }
+        
+        /* Urgency strip */
+        .urgency {
+            background: #C9A89E;
+            color: #5A4A42;
+            text-align: center;
+            padding: 18px;
+            font-weight: 600;
+            font-size: 1.05em;
+            border-radius: 0 0 20px 20px;
+            margin-bottom: 40px;
+        }
+        
+        /* Content Sections */
+        section {
+            background: white;
+            padding: 55px 35px;
+            margin-bottom: 30px;
+            border-radius: 20px;
+            box-shadow: 0 3px 15px rgba(90, 74, 66, 0.06);
+        }
+        
+        h2 {
+            font-size: 2.2em;
+            margin-bottom: 30px;
+            color: #5A4A42;
+            border-left: 6px solid #E89B7E;
+            padding-left: 22px;
+            line-height: 1.3;
+        }
+        
+        h3 {
+            font-size: 1.5em;
+            margin: 35px 0 18px 0;
+            color: #6B7565;
+        }
+        
+        .problem-list, .benefit-list {
+            list-style: none;
+            margin: 25px 0;
+        }
+        
+        .problem-list li, .benefit-list li {
+            padding: 18px 18px 18px 50px;
+            margin: 12px 0;
+            background: #F2ECE4;
+            border-radius: 12px;
+            position: relative;
+            font-size: 1.05em;
+        }
+        
+        .problem-list li:before {
+            content: "✗";
+            position: absolute;
+            left: 18px;
+            color: #E89B7E;
+            font-weight: bold;
+            font-size: 1.4em;
+        }
+        
+        .benefit-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 18px;
+            color: #9FB59C;
+            font-weight: bold;
+            font-size: 1.4em;
+        }
+        
+        .callout {
+            background: linear-gradient(135deg, #F2ECE4 0%, #D4C4B0 100%);
+            padding: 30px;
+            border-left: 5px solid #E89B7E;
+            border-radius: 12px;
+            margin: 30px 0;
+            font-size: 1.2em;
+            font-weight: 600;
+            line-height: 1.6;
+        }
+        
+        .stat-box {
+            background: #F2ECE4;
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+            margin: 20px 0;
+        }
+        
+        .stat-box .number {
+            font-size: 3em;
+            color: #E89B7E;
+            font-weight: 700;
+            line-height: 1;
+        }
+        
+        .stat-box .label {
+            font-size: 1.1em;
+            color: #6B7565;
+            margin-top: 10px;
+        }
+        
+        .paths {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin: 35px 0;
+        }
+        
+        .path-card {
+            background: #F2ECE4;
+            padding: 30px;
+            border-radius: 15px;
+            border-top: 5px solid #E89B7E;
+        }
+        
+        .path-card h4 {
+            color: #5A4A42;
+            margin-bottom: 18px;
+            font-size: 1.4em;
+        }
+        
+        .path-card .price {
+            font-size: 1.5em;
+            color: #E89B7E;
+            font-weight: 700;
+            margin: 15px 0;
+        }
+        
+        @media (max-width: 768px) {
+            .paths { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 2em; }
+        }
+        
+        /* Objections */
+        .objection-row {
+            display: grid;
+            grid-template-columns: 1fr 2.5fr;
+            gap: 25px;
+            padding: 22px;
+            margin: 18px 0;
+            background: #F2ECE4;
+            border-radius: 12px;
+            align-items: start;
+        }
+        
+        .objection-row strong {
+            color: #E89B7E;
+            font-size: 1.05em;
+        }
+        
+        /* Testimonial */
+        .testimonial {
+            background: #F2ECE4;
+            padding: 35px;
+            border-left: 5px solid #9FB59C;
+            border-radius: 12px;
+            margin: 30px 0;
+            font-style: italic;
+            font-size: 1.1em;
+            line-height: 1.7;
+        }
+        
+        .testimonial .author {
+            margin-top: 15px;
+            font-weight: 600;
+            font-style: normal;
+            color: #6B7565;
+        }
+        
+        /* Final CTA */
+        .final-cta {
+            background: linear-gradient(135deg, #5A4A42 0%, #6B7565 100%);
+            color: #F2ECE4;
+            padding: 70px 35px;
+            text-align: center;
+            border-radius: 20px;
+        }
+        
+        .final-cta h2 {
+            color: #F2ECE4;
+            border: none;
+            padding: 0;
+            font-size: 2.3em;
+        }
+        
+        .final-cta .guarantee {
+            background: rgba(242, 236, 228, 0.12);
+            padding: 25px;
+            border-radius: 12px;
+            margin: 30px auto;
+            max-width: 600px;
+            font-size: 1.05em;
+        }
+        
+        .final-cta ul {
+            list-style: none;
+            margin: 35px 0;
+            text-align: left;
+            display: inline-block;
+        }
+        
+        .final-cta ul li {
+            padding: 12px 0;
+            font-size: 1.15em;
+        }
+        
+        .final-cta ul li:before {
+            content: "→";
+            color: #E89B7E;
+            font-weight: bold;
+            margin-right: 12px;
+            font-size: 1.2em;
+        }
+        
+        .trust-line {
+            margin-top: 25px;
+            font-size: 0.95em;
+            color: #D4C4B0;
+        }
+    </style>
+</head>
+<body>
+
+<div class="alert-bar">
+    ⚡ Only 3 discovery call slots available this month — Apply today
+</div>
+
+<div class="hero">
+    <div class="container">
+        <div class="eyebrow">For High-Performing Leaders & Founders</div>
+        <h1>Your Body Is Keeping Score:<br>The Hidden Tax on High Performance</h1>
+        <p class="subheadline">You've mastered strategy, but your nervous system is stuck in survival mode. Stop paying the tax in impulsive decisions, chronic tension, and shallow relationships. Re-wire for clarity, connection, and effortless power.</p>
+        
+        <div class="value-props">
+            <ul>
+                <li>Access your higher brain under pressure—not your survival reflexes</li>
+                <li>End chronic anxiety, physical pain, and emotional shutdown at the source</li>
+                <li>Lead your business AND life from grounded presence, not constant reaction</li>
+                <li>Move from functional success to deep fulfillment and authentic intimacy</li>
+            </ul>
+        </div>
+        
+        <a href="#apply" class="cta-button">Book Your Free Discovery Call</a>
+        <p class="micro-cred">Trauma-informed somatic inquiry backed by polyvagal neuroscience</p>
+    </div>
+</div>
+
+<div class="urgency">
+    <div class="container">
+        <strong>Free 1.5-Hour Deep-Dive Assessment</strong> — Walk away with clarity on your core pattern, even if we never work together
+    </div>
+</div>
+
+<div class="container">
+    
+    <section id="problem">
+        <h2>If You're Successful But Still Struggling, This Is Why</h2>
+        
+        <p style="font-size: 1.2em; margin-bottom: 25px;">You've been trying to solve "stress" with more thinking, more planning, and more optimization. <strong>But you can't think your way out of a nervous system response.</strong></p>
+        
+        <p style="font-size: 1.1em; margin-bottom: 30px;">You're not lazy. You're not broken. Your body is doing exactly what it learned to do: protect you. But those old survival patterns—perfectionism, overwork, emotional shutdown, people-pleasing—are now your biggest liabilities.</p>
+        
+        <h3>The Signs Your Nervous System Is Running Your Life:</h3>
+        
+        <ul class="problem-list">
+            <li><strong>You can't switch off.</strong> Your mind races at night, no matter how successful the day was.</li>
+            <li><strong>Your body is breaking down.</strong> Chronic tension, migraines, gut issues that doctors can't explain.</li>
+            <li><strong>You overreact to small triggers.</strong> A Slack message or missed deadline feels like a threat.</li>
+            <li><strong>Your relationships feel transactional.</strong> People want what you provide, not who you are.</li>
+            <li><strong>You feel alone at the top.</strong> Surrounded by people but profoundly disconnected.</li>
+            <li><strong>You're performing in your own life.</strong> Even with your partner and kids, you can't let your guard down.</li>
+            <li><strong>Achievement doesn't silence the anxiety.</strong> The next milestone never brings the peace you're chasing.</li>
+        </ul>
+        
+        <div class="callout">
+            This isn't a mindset problem. It's a nervous system problem. When your body feels unsafe, you lose access to your higher brain—the part that makes great decisions, builds trust, and feels genuine connection.
+        </div>
+    </section>
+    
+    <section id="cost">
+        <h2>The Real Cost: You're Paying a Tax on Your Intelligence</h2>
+        
+        <p style="font-size: 1.15em;">When your nervous system is in defense mode, you literally lose IQ points. The cost shows up as:</p>
+        
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 30px 0;">
+            <div class="stat-box">
+                <div class="number">40%</div>
+                <div class="label">Reduced cognitive capacity under chronic stress</div>
+            </div>
+            <div class="stat-box">
+                <div class="number">∞</div>
+                <div class="label">Missed moments with people who matter most</div>
+            </div>
+        </div>
+        
+        <ul class="problem-list">
+            <li>Impulsive emails and poor decisions you regret later</li>
+            <li>Avoidant leadership—you procrastinate on the hard conversations</li>
+            <li>A "viral nature of negativity" that drains your team's energy</li>
+            <li>Relationships that feel hollow despite external success</li>
+            <li>Physical breakdown your body is literally sending you bills for</li>
+        </ul>
+        
+        <p style="font-size: 1.15em; margin-top: 30px; font-weight: 600;">You are sacrificing your potential, your peace, and your deepest connections for a version of success that is actually a survival state.</p>
+    </section>
+    
+    <section id="promise">
+        <h2>The Shift: From Survival-Driven Hustle to Regulated Power</h2>
+        
+        <p style="font-size: 1.15em; margin-bottom: 30px;">This isn't about "managing stress." It's about re-wiring your autonomic nervous system so safety, clarity, and connection become your default state.</p>
+        
+        <ul class="benefit-list">
+            <li><strong>Decision Clarity Under Pressure:</strong> Access your higher brain in the moments that matter—boardroom, difficult conversations, or family crisis.</li>
+            <li><strong>Emotional Steadiness:</strong> Stay grounded and present when markets crash or team members spiral.</li>
+            <li><strong>Authentic Relationships:</strong> Move from transactional to deeply felt connections where you're seen, not just valued for what you provide.</li>
+            <li><strong>Somatic Relief:</strong> Permanent reduction in chronic pain, tension, migraines, and gut issues as your nervous system downregulates.</li>
+            <li><strong>Effortless Productivity:</strong> Stop "thinking harder" and start operating from a state where your skills work naturally.</li>
+            <li><strong>True Authority:</strong> Lead from internal security, not external validation—people feel the difference.</li>
+            <li><strong>The "Travel Feeling" Anytime:</strong> Access ease and presence in the middle of the storm, not just on vacation.</li>
+        </ul>
+        
+        <div class="testimonial">
+            "I spent 20 years optimizing my business and ignoring my body. Three months of this work gave me more clarity and peace than a decade of therapy and executive coaching combined. My team noticed the shift before I even said anything."
+            <div class="author">— CEO, 8-figure SaaS company</div>
+        </div>
+    </section>
+    
+    <section id="mechanism">
+        <h2>Why This Works (When Everything Else Hasn't)</h2>
+        
+        <p style="font-size: 1.15em;">Most coaching focuses on behavior. Most therapy focuses on thoughts. <strong>We focus on the state that drives both.</strong></p>
+        
+        <p style="font-size: 1.1em; margin: 25px 0;">Using <strong>Compassionate Inquiry, Somatic Re-patterning, and Polyvagal-Informed Practice</strong>, we systematically dismantle the unconscious stress-response patterns stored in your body.</p>
+        
+        <h3>The Method:</h3>
+        
+        <div style="background: #F2ECE4; padding: 25px; border-radius: 12px; margin: 25px 0;">
+            <p style="margin-bottom: 15px;"><strong>1. Contact the Felt Sense:</strong> Learn to recognize activation in real-time (tight chest, urge to rush, numbness).</p>
+            <p style="margin-bottom: 15px;"><strong>2. Map the "Ammunition":</strong> Identify the old triggers—childhood patterns, past trauma—that turn neutral events into perceived threats.</p>
+            <p style="margin-bottom: 15px;"><strong>3. Signal Safety to Your System:</strong> Through tone, pacing, breath, and somatic tools, teach your body it's safe to relax.</p>
+            <p><strong>4. Integrate New Patterns:</strong> Practice until grounded presence becomes your new default, not something you have to "remember" to do.</p>
+        </div>
+        
+        <div class="callout">
+            This isn't "soft"—it's strategic neuroscience. Safety is the gateway to the higher brain structures required for complex problem-solving, ethical leadership, and genuine intimacy. It's a competitive advantage.
+        </div>
+    </section>
+    
+    <section id="paths">
+        <h2>Two Paths to Transformation</h2>
+        
+        <div class="paths">
+            <div class="path-card">
+                <h4>🧘 Individual Journey</h4>
+                <p><strong>3-Month Somatic Inquiry Program</strong></p>
+                <ul style="margin: 20px 0; padding-left: 20px; font-size: 0.95em;">
+                    <li>Weekly 1-on-1 somatic sessions</li>
+                    <li>Custom nervous system roadmap</li>
+                    <li>Daily integration practices</li>
+                    <li>Voxer/text support between sessions</li>
+                    <li>Permanent re-patterning of survival responses</li>
+                </ul>
+                <div class="price">$5,880</div>
+                <p style="font-size: 0.9em; color: #6B7565;">Payment plans available</p>
+            </div>
+            
+            <div class="path-card">
+                <h4>👥 Team Workshop</h4>
+                <p><strong>2-Hour "State of Mind" Session</strong></p>
+                <ul style="margin: 20px 0; padding-left: 20px; font-size: 0.95em;">
+                    <li>Safety as strategy framework</li>
+                    <li>Collective trigger mapping</li>
+                    <li>Team regulation tools</li>
+                    <li>End blame cycles and boost creativity</li>
+                    <li>Create a psychologically safe culture</li>
+                </ul>
+                <div class="price">Contact for pricing</div>
+                <p style="font-size: 0.9em; color: #6B7565;">Ideal for leadership teams 5-20 people</p>
+            </div>
+        </div>
+        
+        <p style="text-align: center; margin-top: 30px; font-size: 1.1em; font-weight: 600;">Both paths start with a <span style="color: #E89B7E;">free 1.5-hour discovery call</span> to map your patterns and design your roadmap.</p>
+    </section>
+    
+    <section id="for-who">
+        <h2>Is This For You?</h2>
+        
+        <h3 style="color: #9FB59C;">✓ This is for you if:</h3>
+        <ul class="benefit-list">
+            <li>You're a leader who realizes behavior management isn't solving the deeper problem.</li>
+            <li>You're ready to look at the "ammunition" behind your triggers with honesty and compassion.</li>
+            <li>You want performance as a byproduct of well-being, not a substitute for it.</li>
+            <li>You're committed to a 3-month process (or team workshop) and willing to do the daily practice.</li>
+            <li>You recognize your chronic symptoms—physical or relational—are messages from your nervous system.</li>
+        </ul>
+        
+        <h3 style="color: #E89B7E; margin-top: 40px;">✗ This is NOT for you if:</h3>
+        <ul class="problem-list">
+            <li>You want a "quick fix" that doesn't require looking at internal patterns.</li>
+            <li>You believe stress and grinding are the only paths to results.</li>
+            <li>You're looking for traditional therapy, HR training, or medical treatment.</li>
+            <li>You're comfortable with shallow relationships and living in constant survival mode.</li>
+            <li>You're not ready to invest time or resources in deep, embodied change.</li>
+        </ul>
+    </section>
+    
+    <section id="objections">
+        <h2>Questions You're Probably Asking</h2>
+        
+        <div>
+            <div class="objection-row">
+                <strong>"Is this therapy?"</strong>
+                <div>No. This is strategic inquiry into how nervous system states drive performance and relationships. We focus on regulation and clarity, not clinical diagnosis or past trauma processing.</div>
+            </div>
+            
+            <div class="objection-row">
+                <strong>"Is this 'woo' or unproven?"</strong>
+                <div>No. This is grounded in polyvagal theory, neuroscience, and evidence-based somatic methods (Compassionate Inquiry, IFS, SE). It's practical, measurable, and backed by research.</div>
+            </div>
+            
+            <div class="objection-row">
+                <strong>"I'm functional—do I really need this?"</strong>
+                <div>Functional in survival mode is a high-cost operation. This work moves you from functional to effortless—where you lead from comfort and clarity, not anxiety and willpower.</div>
+            </div>
+            
+            <div class="objection-row">
+                <strong>"Will this take a lot of time?"</strong>
+                <div>3 months for the individual program; 2 hours for the team workshop. The shift in state actually <em>saves</em> time by reducing mistakes, avoidance, and blame cycles.</div>
+            </div>
+            
+            <div class="objection-row">
+                <strong>"I've tried coaching/therapy before."</strong>
+                <div>Most focus on thoughts or behaviors. We work directly with the autonomic nervous system—where the patterns are stored. If your system feels unsafe, no amount of cognitive work will stick.</div>
+            </div>
+            
+            <div class="objection-row">
+                <strong>"What if I have a 'difficult' team member?"</strong>
+                <div>"Difficult" is often a nervous system seeking safety through control, shutdown, or conflict. We teach you how to shift the environment so they can access their best selves.</div>
+            </div>
+            
+            <div class="objection-row">
+                <strong>"What if my problem is physical pain?"</strong>
+                <div>Your pain is a message. We treat somatic symptoms as direct communication from your nervous system, using inquiry to address the emotional roots of chronic tension.</div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="credibility" style="background: #F2ECE4;">
+        <h2>Built on a Decade of Experience with Leaders Like You</h2>
+        
+        <p style="font-size: 1.1em;">This work is built on 10+ years of experience with high-performing CEOs, founders, and leadership teams who require <strong>results without the hype</strong>.</p>
+        
+        <p style="margin: 25px 0;">Our method is a precise blend of <strong>Compassionate Inquiry, Somatic Re-patterning, Polyvagal Theory, and State of Mind Awareness</strong> that delivers a new internal operating system.</p>
+        
+        <div style="background: white; padding: 25px; border-radius: 12px; margin: 25px 0;">
+            <p style="font-style: italic; color: #6B7565; margin-bottom: 15px;">[Client logos: Tech founders, Fortune 500 executives, high-growth startups]</p>
+            <p style="font-style: italic; color: #6B7565;">[Testimonials: Measurable outcomes in decision quality, team performance, relationship satisfaction, and physical health markers]</p>
+        </div>
+        
+        <p style="font-weight: 600; font-size: 1.1em;">We provide a strong, confidential container for deep work, ensuring insights translate directly into real-world results in your business and personal life.</p>
+    </section>
+    
+</div>
+
+<div class="final-cta" id="apply">
+    <div class="container">
+        <h2>You've Built Your Success on Accountability.<br>Now Apply That Same Rigor to Your Nervous System.</h2>
+        
+        <p style="font-size: 1.25em; margin: 35px 0; line-height: 1.6;">Stop letting old survival adaptations decide your future. Stop paying the tax on your intelligence, your relationships, and your health. Step into the effortless power of a regulated, clear, connected life.</p>
+        
+        <div class="guarantee">
+            <strong>What You Get from the Free Discovery Call:</strong>
+            <ul style="margin-top: 15px;">
+                <li>A precise map of your (or your team's) survival patterns</li>
+                <li>Clarity on the "ammunition" currently being triggered</li>
+                <li>A customized roadmap for transformation</li>
+                <li>Immediate insights you can use even if we don't work together</li>
+            </ul>
+        </div>
+        
+        <div style="margin: 45px 0;">
+            <a href="https://calendly.com/yourlink" class="cta-button">Apply for Your Free Discovery Call</a>
+        </div>
+        
+        <p class="trust-line">⚡ Only 3 slots available this month — No pressure. We'll know quickly if it's a fit.</p>
+        <p style="margin-top: 15px; font-size: 0.9em; color: #D4C4B0;">You'll receive a brief questionnaire after applying to ensure our time together is high-value for both of us.</p>
+    </div>
+</div>
+
+</body>
+</html>
