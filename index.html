@@ -3,162 +3,274 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Being Yourself - Landing Page Versions</title>
+    <title>Reconnect With Yourself | Being Yourself</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
-            background: #F2ECE4;
+            line-height: 1.7;
             color: #5A4A42;
-            padding: 40px 20px;
+            background: #F2ECE4;
         }
         
         .container {
-            max-width: 900px;
+            max-width: 700px;
             margin: 0 auto;
+            padding: 20px;
         }
         
-        h1 {
-            font-size: 2.5em;
-            margin-bottom: 15px;
-            color: #5A4A42;
-        }
-        
-        .subtitle {
-            font-size: 1.2em;
-            color: #6B7565;
-            margin-bottom: 50px;
-        }
-        
-        .card {
+        /* Header */
+        header {
+            text-align: center;
+            padding: 30px 20px 20px;
             background: white;
-            border-radius: 15px;
-            padding: 30px;
-            margin-bottom: 25px;
-            box-shadow: 0 3px 15px rgba(90, 74, 66, 0.08);
+        }
+        
+        .logo {
+            max-width: 400px;
+            height: auto;
+            margin: 0 auto 20px;
+        }
+        
+        /* Hero */
+        .hero {
+            background: linear-gradient(135deg, #5A4A42 0%, #6B7565 100%);
+            color: #F2ECE4;
+            padding: 50px 30px;
+            text-align: center;
+            border-radius: 0 0 25px 25px;
+            margin-bottom: 40px;
+        }
+        
+        .hero h1 {
+            font-size: 2.5em;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        .hero .subheadline {
+            font-size: 1.3em;
+            margin-bottom: 30px;
+            color: #D4C4B0;
+            line-height: 1.5;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: #E89B7E;
+            color: #5A4A42;
+            padding: 18px 45px;
+            font-size: 1.2em;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 50px;
             transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(232, 155, 126, 0.4);
         }
         
-        .card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 5px 25px rgba(90, 74, 66, 0.12);
+        .cta-button:hover {
+            background: #C9A89E;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(232, 155, 126, 0.5);
         }
         
-        .card h2 {
-            color: #E89B7E;
-            margin-bottom: 12px;
+        /* Sections */
+        section {
+            background: white;
+            padding: 40px 30px;
+            margin-bottom: 25px;
+            border-radius: 20px;
+            box-shadow: 0 2px 10px rgba(90, 74, 66, 0.05);
+        }
+        
+        h2 {
             font-size: 1.8em;
+            margin-bottom: 20px;
+            color: #5A4A42;
+            border-left: 5px solid #E89B7E;
+            padding-left: 18px;
         }
         
-        .card .description {
-            color: #6B7565;
-            margin-bottom: 15px;
+        .problem-list {
+            list-style: none;
+            margin: 20px 0;
+        }
+        
+        .problem-list li {
+            padding: 12px 12px 12px 35px;
+            margin: 10px 0;
+            background: #F2ECE4;
+            border-radius: 10px;
+            position: relative;
+        }
+        
+        .problem-list li:before {
+            content: "✗";
+            position: absolute;
+            left: 12px;
+            color: #E89B7E;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+        
+        .benefit-list {
+            list-style: none;
+            margin: 20px 0;
+        }
+        
+        .benefit-list li {
+            padding: 12px 12px 12px 35px;
+            margin: 10px 0;
+            background: #F2ECE4;
+            border-radius: 10px;
+            position: relative;
+        }
+        
+        .benefit-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 12px;
+            color: #9FB59C;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+        
+        .callout {
+            background: linear-gradient(135deg, #F2ECE4 0%, #D4C4B0 100%);
+            padding: 25px;
+            border-left: 5px solid #E89B7E;
+            border-radius: 12px;
+            margin: 25px 0;
+            font-size: 1.15em;
+            font-weight: 600;
             line-height: 1.6;
         }
         
-        .card .score {
-            background: #F2ECE4;
-            padding: 12px 18px;
-            border-radius: 8px;
-            display: inline-block;
-            margin: 10px 10px 10px 0;
-            font-weight: 600;
+        /* Final CTA */
+        .final-cta {
+            background: linear-gradient(135deg, #5A4A42 0%, #6B7565 100%);
+            color: #F2ECE4;
+            padding: 50px 30px;
+            text-align: center;
+            border-radius: 20px;
         }
         
-        .card .score.winner {
-            background: #E89B7E;
-            color: white;
+        .final-cta h2 {
+            color: #F2ECE4;
+            border: none;
+            padding: 0;
+            font-size: 2em;
+            margin-bottom: 20px;
         }
         
-        .card a {
-            display: inline-block;
-            background: #E89B7E;
-            color: white;
-            padding: 12px 30px;
-            border-radius: 25px;
-            text-decoration: none;
-            font-weight: 600;
-            margin-top: 15px;
-            transition: all 0.3s;
+        .trust-line {
+            margin-top: 20px;
+            font-size: 0.9em;
+            color: #D4C4B0;
         }
         
-        .card a:hover {
-            background: #C9A89E;
-            transform: translateX(5px);
-        }
-        
-        .badge {
-            display: inline-block;
-            background: #9FB59C;
-            color: white;
-            padding: 5px 12px;
-            border-radius: 12px;
-            font-size: 0.85em;
-            font-weight: 600;
-            margin-left: 10px;
-        }
-        
-        .recommended {
-            border: 3px solid #E89B7E;
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 1.8em; }
+            .logo { max-width: 280px; }
         }
     </style>
 </head>
 <body>
+
+<header>
+    <img src="being-yourself-logo.jpg" alt="Being Yourself" class="logo">
+</header>
+
+<div class="hero">
     <div class="container">
-        <h1>Being Yourself Landing Pages</h1>
-        <p class="subtitle">4 versions tested with virtual customer "Alex Chen" (CEO, Series B SaaS)</p>
-        
-        <div class="card recommended">
-            <h2>🏆 HYBRID - Ultimate Version <span class="badge">RECOMMENDED</span></h2>
-            <p class="description">
-                <strong>Combines the best of all three:</strong> Strategic business case + emotional depth + relationship focus. 
-                Addresses performance, health, AND intimacy. Full pricing transparency with urgency.
-            </p>
-            <div class="score winner">Virtual Customer Score: 77/80 — STRONG CONVERSION ✓✓</div>
-            <div class="score">Predicted CR: 22-30%</div>
-            <a href="landing-hybrid-ultimate.html">View HYBRID Version →</a>
-        </div>
-        
-        <div class="card">
-            <h2>Version A: The Hidden Cost of Success</h2>
-            <p class="description">
-                <strong>Angle:</strong> "Your body is sending the bill." Focuses on internal toll of external success—chronic anxiety, physical pain, and isolation at the top.
-            </p>
-            <div class="score">Virtual Customer Score: 69/80 — Likely Converts ✓</div>
-            <div class="score">Predicted CR: 15-20%</div>
-            <a href="landing-va-hidden-cost.html">View Version A →</a>
-        </div>
-        
-        <div class="card">
-            <h2>Version B: The Loneliness of Success</h2>
-            <p class="description">
-                <strong>Angle:</strong> "You've mastered business, not being." Deep focus on relationship struggles, emotional unavailability, and intimacy challenges.
-            </p>
-            <div class="score">Virtual Customer Score: 67/80 — Borderline ~</div>
-            <div class="score">Predicted CR: 12-18%</div>
-            <a href="landing-vb-loneliness.html">View Version B →</a>
-        </div>
-        
-        <div class="card">
-            <h2>Version 3: Clarity of Mind & Performance</h2>
-            <p class="description">
-                <strong>Angle:</strong> "Stop managing behavior, start signaling safety." Performance and team-focused. Nervous system as strategic advantage.
-            </p>
-            <div class="score">Virtual Customer Score: 59/80 — Did Not Convert ❌</div>
-            <div class="score">Predicted CR: 8-12%</div>
-            <a href="landing-v3-clarity.html">View Version 3 →</a>
-        </div>
-        
-        <div style="margin-top: 50px; padding: 25px; background: white; border-radius: 15px;">
-            <h3 style="color: #5A4A42; margin-bottom: 15px;">📊 Testing Methodology</h3>
-            <p style="color: #6B7565; line-height: 1.7;">
-                Each page scored on 8 direct response criteria (0-10 each): Headline Hook, Problem Agitation, 
-                Unique Mechanism, Credibility, Clear CTA, Risk Reversal, Objection Handling, and Emotional Resonance.
-                <br><br>
-                <strong>Conversion threshold:</strong> 65+ points = Books a discovery call
-            </p>
-        </div>
+        <h1>You've Mastered Success.<br>Now Reconnect With Yourself.</h1>
+        <p class="subheadline">Stop running on survival mode. Reconnect with your body, emotions, and natural clarity to make better decisions and live fully—in business and life.</p>
+        <a href="#apply" class="cta-button">Book Free Discovery Call</a>
     </div>
+</div>
+
+<div class="container">
+    
+    <section>
+        <h2>If This Is You...</h2>
+        
+        <ul class="problem-list">
+            <li>Your success came from <strong>pushing, controlling, and dominating</strong>—but now it feels exhausting</li>
+            <li>You can't turn off your mind at night, even after a successful day</li>
+            <li>You're <strong>disconnected from your body</strong>—chronic tension, pain, or numbness you've been ignoring</li>
+            <li>You feel like you're performing in your own life, even with your partner and kids</li>
+            <li>Big decisions feel clouded by anxiety instead of clear and grounded</li>
+            <li>You're tired of the struggle—there has to be a better way to succeed</li>
+        </ul>
+        
+        <div class="callout">
+            What got you here was survival mode: control, overthinking, and disconnection from yourself. What will get you forward is reconnecting with your body, emotions, and natural state of clarity.
+        </div>
+    </section>
+    
+    <section>
+        <h2>What Changes</h2>
+        
+        <p style="font-size: 1.1em; margin-bottom: 20px;">This isn't about adding more strategies or "fixing" yourself. It's about <strong>reconnecting with what you already have</strong>—your body's wisdom, your natural clarity, your emotional truth.</p>
+        
+        <ul class="benefit-list">
+            <li><strong>Reconnect with your body:</strong> Release chronic tension and learn to listen to what it's telling you</li>
+            <li><strong>Access your natural state:</strong> Make decisions from clarity and groundedness, not fear and control</li>
+            <li><strong>Feel your emotions:</strong> Process what's really happening instead of pushing it down</li>
+            <li><strong>Be present:</strong> Show up fully for your business, your family, and yourself</li>
+            <li><strong>Lead from ease:</strong> Stop the exhausting cycle of domination and struggle</li>
+        </ul>
+    </section>
+    
+    <section>
+        <h2>How This Works</h2>
+        
+        <p style="font-size: 1.1em; margin-bottom: 20px;">This is <strong>body-based presence work</strong>—not traditional talk therapy or cognitive strategies.</p>
+        
+        <p>Through <strong>somatic inquiry</strong>, we work directly with your body to:</p>
+        
+        <ul style="margin: 20px 0; padding-left: 25px;">
+            <li style="margin: 8px 0;">Process what's stored in your body (including past trauma) through <strong>felt experience</strong>, not just talking about it</li>
+            <li style="margin: 8px 0;">Reconnect you with your emotions, sensations, and natural state of mind</li>
+            <li style="margin: 8px 0;">Shift survival-driven patterns (control, struggle, disconnection) into grounded presence</li>
+        </ul>
+        
+        <p style="margin-top: 20px; font-weight: 600;">The work is tailored to your process—it could be coaching, it could be somatic therapy. What it's <em>not</em>: clinical diagnosis or traditional cognitive therapy.</p>
+    </section>
+    
+    <section>
+        <h2>Common Questions</h2>
+        
+        <p style="margin-bottom: 15px;"><strong>Is this therapy?</strong><br>
+        It's tailored to you. It could be coaching or somatic therapy, depending on what you need. I don't do clinical diagnosis, but I do work with trauma through body-based methods.</p>
+        
+        <p style="margin-bottom: 15px;"><strong>What about past trauma?</strong><br>
+        I absolutely work with past trauma—but through <strong>somatic experiencing</strong>, not just talking. We process it through your body, where it's actually stored.</p>
+        
+        <p style="margin-bottom: 15px;"><strong>How is this different from regular therapy?</strong><br>
+        This is body-based, not mind-based. The opposite of cognitive behavioral therapy. We work with what you <em>feel</em>, not what you <em>think</em>.</p>
+        
+        <p style="margin-bottom: 15px;"><strong>How long does this take?</strong><br>
+        We start with a free 1.5-hour discovery call. From there, most clients work with me for 3-6 months.</p>
+    </section>
+    
+</div>
+
+<div class="final-cta">
+    <div class="container">
+        <h2>Ready to Reconnect?</h2>
+        
+        <p style="font-size: 1.2em; margin: 25px 0;">Let's explore whether this work is right for you. No pressure—just an honest conversation about what you're experiencing and where you want to go.</p>
+        
+        <div style="margin: 35px 0;">
+            <a href="https://calendly.com/yourlink" class="cta-button">Book Your Free Discovery Call</a>
+        </div>
+        
+        <p class="trust-line">1.5 hours • No obligation • Walk away with clarity even if we don't work together</p>
+    </div>
+</div>
+
 </body>
 </html>
